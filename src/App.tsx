@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import InteractiveEffort from './InteractiveEffort'
 import VideoLibrary from './VideoLibrary'
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
@@ -30,6 +31,7 @@ function App() {
         </a>
         <div className="nav-links">
           <a href="#method">Method</a>
+          <a href="#execution">Execution</a>
           <a href="#videos">Videos</a>
           <a href="#paper">Paper</a>
         </div>
@@ -120,6 +122,14 @@ function App() {
           <img src={asset('media/policy-switching.webp')} width="1800" height="427" alt="Automatic selection and execution of a button-press hand skill during toast preparation" />
           <figcaption><strong>Automatic skill switching.</strong> The wrist-camera view selects Button Press, the hand moves to the skill's initial posture, and clutch input regulates execution.</figcaption>
         </figure>
+      </section>
+
+      <section className="execution page-shell" id="execution" aria-labelledby="execution-title">
+        <div className="section-intro split-heading">
+          <h2 id="execution-title">Open the paper figures. Inspect every trial.</h2>
+          <p>Figures 9 and 10 share the same 30 physical bottle-grasp trials. The interactive versions preserve the paper’s conditions, closure alignment and default analysis window while exposing the individual traces behind each summary.</p>
+        </div>
+        <InteractiveEffort />
       </section>
 
       <section className="videos page-shell" id="videos" aria-labelledby="videos-title">
