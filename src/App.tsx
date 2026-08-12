@@ -7,7 +7,7 @@ const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
 const citation = `@article{zhao2026nestdex,
   title   = {NestDex: Nested Policy Learning with Copilot Assisted
              Teleoperation for Dexterous Manipulation},
-  author  = {Zhao, James and Tang, Jinhe and Ba, Brian and Zhi, Weiming},
+  author  = {Zhao, James and Tang, Jinhe and Ba, Mingyuan and Zhi, Weiming},
   year    = {2026},
   note    = {Preprint. Project website: https://aus.bot/research/nestdex}
 }`
@@ -45,7 +45,7 @@ function App() {
           <p className="authors">
             <span>James Zhao<sup>1,†</sup></span>
             <span>Jinhe Tang<sup>1,†</sup></span>
-            <span>Brian Ba<sup>1</sup></span>
+            <span>Mingyuan Ba<sup>1</sup></span>
             <span>Weiming Zhi<sup>1,2,3,*</sup></span>
           </p>
           <div className="affiliations">
