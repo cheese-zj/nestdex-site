@@ -13,66 +13,6 @@ const citation = `@article{zhao2026nestdex,
 
 const paperAbstract = `Dexterous manipulation promises substantially richer robot interaction with the physical world, but learning these behaviours remains constrained by the difficulty of collecting consistent, complete-task demonstrations. Unlike parallel-jaw manipulation, dexterous tasks require the operator to coordinate arm motion with precise, contact-rich finger behaviour throughout the task. We introduce NestDex, a nested policy-learning framework that reduces this burden by using learned hand skills to assist demonstration collection. The operator controls the arm and regulates the active hand skill through a single-DoF clutch, rather than directly specifying the full finger trajectory. The inner hand policy adapts its motion from the latest proprioceptive history, while a vision-language selector activates the appropriate skill for each task stage. The resulting demonstrations train a separate outer visuomotor policy that controls both the arm and hand without the inner policies at deployment. A hand-action variational autoencoder provides compact hand-action targets while retaining arm commands in joint space. Across real-world dexterous manipulation experiments, NestDex improves demonstration reliability and efficiency, and the resulting empirical evaluations support effective autonomous policy learning.`
 
-const collectionResults = [
-  { task: 'Tongs', copilot: 100, baseline: 0 },
-  { task: 'Bottle', copilot: 100, baseline: 50 },
-  { task: 'Dual-object', copilot: 100, baseline: 30 },
-  { task: 'Ingredient + pot', copilot: 100, baseline: 75 },
-  { task: 'Toast', copilot: 100, baseline: 0 },
-  { task: 'Binder', copilot: 100, baseline: 0 },
-]
-
-const autonomyResults = [
-  { task: 'Tongs transfer', direct: 65, latent: 100, baseline: null },
-  { task: 'Bottle disposal', direct: 60, latent: 75, baseline: 40 },
-  { task: 'Dual-object transfer', direct: 80, latent: 90, baseline: 20 },
-  { task: 'Ingredient + pot', direct: 85, latent: 100, baseline: 75 },
-]
-
-function CollectionChart() {
-  return (
-    <figure className="collection-chart" aria-labelledby="collection-chart-title">
-      <figcaption className="chart-caption" id="collection-chart-title">
-        <span>Demonstration success rate</span>
-        <span className="chart-key"><i className="key-copilot" />NestDex copilot <i className="key-baseline" />AnyTeleop</span>
-      </figcaption>
-      <div className="collection-grid">
-        {collectionResults.map((result) => (
-          <article key={result.task}>
-            <div className="bar-area" aria-label={`${result.task}: NestDex ${result.copilot}%, AnyTeleop ${result.baseline}%`}>
-              <div className="bar copilot-bar" style={{ height: `${result.copilot}%` }}><span>{result.copilot}%</span></div>
-              <div className="bar baseline-bar" style={{ height: `${result.baseline}%` }}><span>{result.baseline}%</span></div>
-            </div>
-            <p>{result.task}</p>
-          </article>
-        ))}
-      </div>
-      <p className="chart-note">Twenty collection attempts per method and task on the same leader-follower platform.</p>
-    </figure>
-  )
-}
-
-function AutonomyChart() {
-  return (
-    <figure className="autonomy-chart" aria-labelledby="autonomy-chart-title">
-      <figcaption className="chart-caption" id="autonomy-chart-title">
-        <span>Autonomous outer-policy success</span>
-        <span className="chart-key"><i className="key-latent" />Copilot + H-VAE <i className="key-direct" />Copilot, direct hand action</span>
-      </figcaption>
-      <div className="autonomy-list">
-        {autonomyResults.map((result) => (
-          <article key={result.task}>
-            <p>{result.task}</p>
-            <div className="result-track"><span className="latent-fill" style={{ width: `${result.latent}%` }} /><strong>{result.latent}%</strong></div>
-            <div className="result-track"><span className="direct-fill" style={{ width: `${result.direct}%` }} /><strong>{result.direct}%</strong></div>
-          </article>
-        ))}
-      </div>
-      <p className="chart-note">Twenty autonomous rollouts per policy. H-VAE compresses each 20-DoF hand command to a 10-dimensional latent action.</p>
-    </figure>
-  )
-}
-
 function App() {
   const [copied, setCopied] = useState(false)
 
@@ -90,7 +30,6 @@ function App() {
         </a>
         <div className="nav-links">
           <a href="#method">Method</a>
-          <a href="#results">Results</a>
           <a href="#videos">Videos</a>
           <a href="#paper">Paper</a>
         </div>
@@ -162,24 +101,6 @@ function App() {
         </div>
       </section>
 
-      <section className="results page-shell" id="results" aria-labelledby="results-title">
-        <div className="section-intro split-heading">
-          <h2 id="results-title">Reliable collection becomes useful autonomy.</h2>
-          <p>The evaluation follows the complete route from collecting demonstrations to autonomous task execution, then isolates the value of contact-aware closed-loop hand control and temporal ensembling.</p>
-        </div>
-
-        <div className="metrics" aria-label="Experimental summary">
-          <article><strong>6 / 6</strong><span>tasks reach 100% demonstration success with copilot assistance</span></article>
-          <article><strong>4</strong><span>tasks evaluated with autonomous outer policies</span></article>
-          <article><strong>9 / 10</strong><span>bottle grasps succeed with closed-loop temporal ensembling</span></article>
-        </div>
-
-        <div className="chart-stack">
-          <CollectionChart />
-          <AutonomyChart />
-        </div>
-      </section>
-
       <section className="behaviour section-band" aria-labelledby="behaviour-title">
         <div className="page-shell section-intro split-heading">
           <h2 id="behaviour-title">Contact changes the hand. The policy changes with it.</h2>
@@ -203,8 +124,8 @@ function App() {
 
       <section className="videos page-shell" id="videos" aria-labelledby="videos-title">
         <div className="section-intro split-heading">
-          <h2 id="videos-title">Five tasks, one collection-to-autonomy story.</h2>
-          <p>Explore representative autonomous outer-policy rollouts and complete copilot-assisted bimanual demonstrations from the physical experiments.</p>
+          <h2 id="videos-title">Task demos, grouped for comparison.</h2>
+          <p>Switch between five physical tasks and multiple recorded groups. Short autonomous rollouts and complete copilot-assisted demonstrations are shown side by side where the recordings support it.</p>
         </div>
         <VideoLibrary />
       </section>
