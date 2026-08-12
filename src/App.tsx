@@ -152,7 +152,7 @@ function App() {
 
         <div className="latent-grid page-shell">
           <figure>
-            <img src={asset('media/hvae.webp')} width="1450" height="878" loading="lazy" alt="Hand variational autoencoder and outer policy training diagram" />
+            <img src={asset('media/hvae.webp')} width="1600" height="1219" alt="Hand variational autoencoder and outer policy training diagram" />
           </figure>
           <div>
             <p className="eyebrow">Compact dexterous actions</p>
@@ -187,16 +187,16 @@ function App() {
         </div>
         <div className="behaviour-grid page-shell">
           <figure className="evidence-card adaptation-card">
-            <img src={asset('media/contact-adaptation.webp')} width="1084" height="651" loading="lazy" alt="One grasp policy producing different hand configurations around four objects" />
+            <img src={asset('media/contact-adaptation.webp')} width="1084" height="589" alt="One grasp policy producing different hand configurations around four objects" />
             <figcaption><span>One policy, four learned contact conditions</span><p>Green scallion toy, water bottle, radish toy and paper cup.</p></figcaption>
           </figure>
           <figure className="evidence-card jerk-card">
-            <img src={asset('media/jerk-ablation.webp')} width="1536" height="585" loading="lazy" alt="Temporal ensembling ablation showing lower executed-command and pre-limit jerk" />
+            <img src={asset('media/jerk-ablation.webp')} width="1512" height="559" alt="Temporal ensembling ablation showing lower executed-command and pre-limit jerk" />
             <figcaption><span>Closed-loop prediction, smoothed online</span><p>Without ensembling, median executed-command P95 jerk is 2.30× that of temporal ensembling at the primary filter window.</p></figcaption>
           </figure>
         </div>
         <figure className="switch-figure page-shell">
-          <img src={asset('media/policy-switching.webp')} width="2040" height="587" loading="lazy" alt="Automatic selection and execution of a button-press hand skill during toast preparation" />
+          <img src={asset('media/policy-switching.webp')} width="1800" height="427" alt="Automatic selection and execution of a button-press hand skill during toast preparation" />
           <figcaption><strong>Automatic skill switching.</strong> The wrist-camera view selects Button Press, the hand moves to the skill's initial posture, and clutch input regulates execution.</figcaption>
         </figure>
       </section>
