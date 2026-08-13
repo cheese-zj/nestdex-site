@@ -6,14 +6,13 @@ const reelSegments = [
   { end: 7.7667, mode: 'Autonomous outer policy', task: 'Tongs transfer', detail: 'Rollout 01 · retrieve tool → transfer carrot', speed: '4×' },
   { end: 17.4333, mode: 'Autonomous outer policy', task: 'Tongs transfer', detail: 'Rollout 05 · retrieve tool → transfer carrot', speed: '3×' },
   { end: 24.4333, mode: 'Autonomous outer policy', task: 'Bottle disposal', detail: 'Rollout 01 · grasp bottle → place in bin', speed: '3×' },
-  { end: 32.1, mode: 'Autonomous outer policy', task: 'Bottle disposal', detail: 'Rollout 02 · grasp bottle → place in bin', speed: '3×' },
-  { end: 39.4333, mode: 'Autonomous outer policy', task: 'Dual-object transfer', detail: 'Rollout 01 · wide setup → contact close-up → dispose', speed: '3×' },
-  { end: 47.4333, mode: 'Autonomous outer policy', task: 'Dual-object transfer', detail: 'Rollout 04 · collect both objects → dispose', speed: '3×' },
-  { end: 54.1, mode: 'Copilot-assisted collection', task: 'Toast preparation', detail: 'Demonstration 01 · pick up bread → insert in toaster', speed: '6×' },
-  { end: 60.5, mode: 'Copilot-assisted collection', task: 'Toast preparation', detail: 'Demonstration 02 · pick up bread → insert in toaster', speed: '5×' },
-  { end: 66, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · pick up paper → feed into hole punch', speed: '4×' },
-  { end: 70.8, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · press hole punch → holes complete', speed: '5×' },
-  { end: 78.3, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · open binder → file paper', speed: '6×' },
+  { end: 31.7667, mode: 'Autonomous outer policy', task: 'Dual-object transfer', detail: 'Rollout 01 · wide setup → contact close-up → dispose', speed: '3×' },
+  { end: 39.7667, mode: 'Autonomous outer policy', task: 'Dual-object transfer', detail: 'Rollout 04 · collect both objects → dispose', speed: '3×' },
+  { end: 46.4333, mode: 'Copilot-assisted collection', task: 'Toast preparation', detail: 'Demonstration 01 · pick up bread → insert in toaster', speed: '6×' },
+  { end: 52.8333, mode: 'Copilot-assisted collection', task: 'Toast preparation', detail: 'Demonstration 02 · pick up bread → insert in toaster', speed: '5×' },
+  { end: 58.3333, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · pick up paper → feed into hole punch', speed: '4×' },
+  { end: 63.1333, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · press hole punch → holes complete', speed: '5×' },
+  { end: 70.633, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · open binder → file paper', speed: '6×' },
 ]
 
 export default function HeroReel() {
@@ -28,13 +27,13 @@ export default function HeroReel() {
           muted
           loop
           playsInline
-          poster={asset('media/hero-action-cut-poster.jpg?v=7')}
+          poster={asset('media/hero-action-cut-poster.jpg?v=8')}
           onTimeUpdate={(event) => {
             const nextIndex = reelSegments.findIndex((item) => event.currentTarget.currentTime < item.end)
             setSegmentIndex(nextIndex === -1 ? reelSegments.length - 1 : nextIndex)
           }}
         >
-          <source src={asset('media/hero-action-cut.mp4?v=7')} type="video/mp4" />
+          <source src={asset('media/hero-action-cut.mp4?v=8')} type="video/mp4" />
         </video>
         <div className="hero-reel-label" key={`${segment.task}-${segment.detail}`}>
           <div className={`hero-reel-mode${segment.mode.startsWith('Copilot') ? ' is-assisted' : ''}`}>
