@@ -63,10 +63,10 @@ function App() {
       </header>
 
       <figure className="hero-media hero-video-shell">
-        <video autoPlay muted loop playsInline poster={asset('media/hero-poster.webp')}>
-          <source src={asset('media/hero.mp4')} type="video/mp4" />
+        <video autoPlay muted loop playsInline poster={asset('media/hero-action-cut-poster.jpg')}>
+          <source src={asset('media/hero-action-cut.mp4')} type="video/mp4" />
         </video>
-        <figcaption><span>From assisted collection to autonomous manipulation</span><span>Inner hand skills · outer visuomotor policy</span></figcaption>
+        <figcaption><span>Five task highlights · action-first edit</span><span>Muted · transit accelerated 2.2–4.5×</span></figcaption>
       </figure>
 
       <section className="abstract-section page-shell" aria-labelledby="abstract-title">
