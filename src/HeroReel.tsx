@@ -40,7 +40,6 @@ export default function HeroReel() {
           <p>{segment.task}<strong>{segment.speed}</strong></p>
         </div>
       </div>
-      <figcaption><span>Ten continuous task sequences · approach, contact, result</span><span>Each sequence shows its individual playback rate</span></figcaption>
     </figure>
   )
 }
