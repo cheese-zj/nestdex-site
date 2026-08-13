@@ -11,8 +11,9 @@ const reelSegments = [
   { end: 47.6667, mode: 'Autonomous outer policy', task: 'Dual-object transfer', detail: 'Rollout 04 · collect both objects → dispose', speed: '3.2×' },
   { end: 54.9333, mode: 'Copilot-assisted collection', task: 'Toast preparation', detail: 'Demonstration 01 · pick up bread → insert in toaster', speed: '5.5×' },
   { end: 62.0333, mode: 'Copilot-assisted collection', task: 'Toast preparation', detail: 'Demonstration 02 · pick up bread → insert in toaster', speed: '4.5×' },
-  { end: 69.7, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · pick up paper → punch holes', speed: '6.0×' },
-  { end: 77.2, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · open binder → file paper', speed: '6.0×' },
+  { end: 67.5333, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · pick up paper → feed into hole punch', speed: '4.0×' },
+  { end: 72.8667, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · press hole punch → holes complete', speed: '4.5×' },
+  { end: 80.366, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · open binder → file paper', speed: '6.0×' },
 ]
 
 export default function HeroReel() {
@@ -27,13 +28,13 @@ export default function HeroReel() {
           muted
           loop
           playsInline
-          poster={asset('media/hero-action-cut-poster.jpg?v=4')}
+          poster={asset('media/hero-action-cut-poster.jpg?v=5')}
           onTimeUpdate={(event) => {
             const nextIndex = reelSegments.findIndex((item) => event.currentTarget.currentTime < item.end)
             setSegmentIndex(nextIndex === -1 ? reelSegments.length - 1 : nextIndex)
           }}
         >
-          <source src={asset('media/hero-action-cut.mp4?v=4')} type="video/mp4" />
+          <source src={asset('media/hero-action-cut.mp4?v=5')} type="video/mp4" />
         </video>
         <div className="hero-reel-label" key={`${segment.task}-${segment.detail}`}>
           <div className={`hero-reel-mode${segment.mode.startsWith('Copilot') ? ' is-assisted' : ''}`}>
