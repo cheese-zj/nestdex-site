@@ -3,16 +3,16 @@ import { useState } from 'react'
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
 const reelSegments = [
-  { end: 2.8667, task: 'Tongs transfer', detail: 'Rollout 01', speed: '2.8×' },
-  { end: 5.6667, task: 'Tongs transfer', detail: 'Rollout 05', speed: '3.2×' },
-  { end: 8.4667, task: 'Bottle disposal', detail: 'Rollout 01', speed: '3.2×' },
-  { end: 11.4333, task: 'Bottle disposal', detail: 'Rollout 02', speed: '4.4×' },
-  { end: 14.2333, task: 'Dual-object transfer', detail: 'Rollout 01', speed: '5.0×' },
-  { end: 17.2333, task: 'Dual-object transfer', detail: 'Rollout 04', speed: '6.0×' },
-  { end: 20.4, task: 'Toast preparation', detail: 'Rollout 01 · insert bread', speed: '2.2×' },
-  { end: 23.4, task: 'Toast preparation', detail: 'Rollout 02 · insert bread', speed: '4.0×' },
-  { end: 26.4, task: 'Binder filing', detail: 'Rollout 02 · punch paper', speed: '10.0×' },
-  { end: 29.4, task: 'Binder filing', detail: 'Rollout 02 · file paper', speed: '10.0×' },
+  { end: 8.8667, task: 'Tongs transfer', detail: 'Rollout 01 · retrieve tool → transfer carrot', speed: '3.5×' },
+  { end: 17.6667, task: 'Tongs transfer', detail: 'Rollout 05 · retrieve tool → transfer carrot', speed: '3.3×' },
+  { end: 25.1667, task: 'Bottle disposal', detail: 'Rollout 01 · grasp bottle → place in bin', speed: '2.8×' },
+  { end: 32.8333, task: 'Bottle disposal', detail: 'Rollout 02 · grasp bottle → place in bin', speed: '3.0×' },
+  { end: 40.1667, task: 'Dual-object transfer', detail: 'Rollout 01 · collect both objects → dispose', speed: '3.0×' },
+  { end: 47.6667, task: 'Dual-object transfer', detail: 'Rollout 04 · collect both objects → dispose', speed: '3.2×' },
+  { end: 54.9333, task: 'Toast preparation', detail: 'Rollout 01 · pick up bread → insert in toaster', speed: '5.5×' },
+  { end: 62.0333, task: 'Toast preparation', detail: 'Rollout 02 · pick up bread → insert in toaster', speed: '4.5×' },
+  { end: 69.7, task: 'Binder filing', detail: 'Rollout 02 · pick up paper → punch holes', speed: '6.0×' },
+  { end: 77.2, task: 'Binder filing', detail: 'Rollout 02 · open binder → file paper', speed: '6.0×' },
 ]
 
 export default function HeroReel() {
@@ -40,7 +40,7 @@ export default function HeroReel() {
           <p>{segment.task}<strong>{segment.speed}</strong></p>
         </div>
       </div>
-      <figcaption><span>Ten highlights from distinct task moments</span><span>Each segment shows its individual playback rate</span></figcaption>
+      <figcaption><span>Ten continuous task sequences · approach, contact, result</span><span>Each sequence shows its individual playback rate</span></figcaption>
     </figure>
   )
 }
