@@ -9,10 +9,10 @@ const reelSegments = [
   { end: 31.7667, mode: 'Autonomous outer policy', task: 'Dual-object transfer', detail: 'Rollout 01 · wide setup → contact close-up → dispose', speed: '3×' },
   { end: 39.7667, mode: 'Autonomous outer policy', task: 'Dual-object transfer', detail: 'Rollout 04 · collect both objects → dispose', speed: '3×' },
   { end: 46.4333, mode: 'Copilot-assisted collection', task: 'Toast preparation', detail: 'Demonstration 01 · pick up bread → insert in toaster', speed: '6×' },
-  { end: 52.8333, mode: 'Copilot-assisted collection', task: 'Toast preparation', detail: 'Demonstration 02 · pick up bread → insert in toaster', speed: '5×' },
-  { end: 56.8333, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · pick up paper → align with hole punch', speed: '4×' },
-  { end: 59.2333, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · feed paper into hole punch', speed: '5×' },
-  { end: 64.733, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · press hole punch → holes complete', speed: '4×' },
+  { end: 56.4333, mode: 'Copilot-assisted collection', task: 'Toast preparation', detail: 'Demonstration 02 · press toaster lever → begin toasting', speed: '5×' },
+  { end: 60.4333, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · pick up paper → align with hole punch', speed: '4×' },
+  { end: 62.8333, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · feed paper into hole punch', speed: '5×' },
+  { end: 68.333, mode: 'Copilot-assisted collection', task: 'Binder filing', detail: 'Demonstration 02 · press hole punch → holes complete', speed: '4×' },
 ]
 
 export default function HeroReel() {
@@ -27,13 +27,13 @@ export default function HeroReel() {
           muted
           loop
           playsInline
-          poster={asset('media/hero-action-cut-poster.jpg?v=9')}
+          poster={asset('media/hero-action-cut-poster.jpg?v=10')}
           onTimeUpdate={(event) => {
             const nextIndex = reelSegments.findIndex((item) => event.currentTarget.currentTime < item.end)
             setSegmentIndex(nextIndex === -1 ? reelSegments.length - 1 : nextIndex)
           }}
         >
-          <source src={asset('media/hero-action-cut.mp4?v=9')} type="video/mp4" />
+          <source src={asset('media/hero-action-cut.mp4?v=10')} type="video/mp4" />
         </video>
         <div className="hero-reel-label" key={`${segment.task}-${segment.detail}`}>
           <div className={`hero-reel-mode${segment.mode.startsWith('Copilot') ? ' is-assisted' : ''}`}>
