@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import HeroReel from './HeroReel'
 import InteractiveEffort from './InteractiveEffort'
 import VideoLibrary from './VideoLibrary'
 
@@ -62,12 +63,7 @@ function App() {
         </div>
       </header>
 
-      <figure className="hero-media hero-video-shell">
-        <video autoPlay muted loop playsInline poster={asset('media/hero-action-cut-poster.jpg?v=2')}>
-          <source src={asset('media/hero-action-cut.mp4?v=2')} type="video/mp4" />
-        </video>
-        <figcaption><span>Five task highlights · action-first edit</span><span>Muted · transit accelerated 2.2–4.5×</span></figcaption>
-      </figure>
+      <HeroReel />
 
       <section className="abstract-section page-shell" aria-labelledby="abstract-title">
         <h2 id="abstract-title">Abstract</h2>

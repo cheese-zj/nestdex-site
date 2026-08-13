@@ -164,6 +164,24 @@ figure { margin: 0; }
   background: #171916;
   object-fit: cover;
 }
+.hero-reel { position: relative; overflow: hidden; }
+.hero-reel-label {
+  position: absolute;
+  top: var(--s4);
+  left: var(--s4);
+  min-width: min(320px, calc(100% - 32px));
+  padding: 11px 13px 12px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .36);
+  border-radius: 2px;
+  background: rgba(20, 23, 20, .82);
+  backdrop-filter: blur(9px);
+  animation: reel-label-in .18s ease-out both;
+}
+.hero-reel-label > span { display: block; color: rgba(255, 255, 255, .68); font: 500 8px/1.2 'IBM Plex Mono', monospace; letter-spacing: .04em; text-transform: uppercase; }
+.hero-reel-label p { display: flex; justify-content: space-between; gap: var(--s5); align-items: baseline; margin: 8px 0 0; font-size: 15px; line-height: 1; }
+.hero-reel-label strong { color: #a7d3c5; font: 600 13px/1 'IBM Plex Mono', monospace; }
+@keyframes reel-label-in { from { opacity: 0; transform: translateY(-4px); } }
 .hero-media figcaption {
   display: flex;
   justify-content: space-between;
