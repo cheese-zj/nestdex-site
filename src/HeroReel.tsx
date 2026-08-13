@@ -27,13 +27,13 @@ export default function HeroReel() {
           muted
           loop
           playsInline
-          poster={asset('media/hero-action-cut-poster.jpg?v=3')}
+          poster={asset('media/hero-action-cut-poster.jpg?v=4')}
           onTimeUpdate={(event) => {
             const nextIndex = reelSegments.findIndex((item) => event.currentTarget.currentTime < item.end)
             setSegmentIndex(nextIndex === -1 ? reelSegments.length - 1 : nextIndex)
           }}
         >
-          <source src={asset('media/hero-action-cut.mp4?v=3')} type="video/mp4" />
+          <source src={asset('media/hero-action-cut.mp4?v=4')} type="video/mp4" />
         </video>
         <div className="hero-reel-label" key={`${segment.task}-${segment.detail}`}>
           <span>{String(segmentIndex + 1).padStart(2, '0')} / {reelSegments.length} · {segment.detail}</span>
