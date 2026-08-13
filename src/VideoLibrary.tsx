@@ -70,7 +70,7 @@ export default function VideoLibrary() {
               <video controls muted playsInline preload="metadata" poster={asset(item.poster)}>
                 <source src={asset(item.video)} type="video/mp4" />
               </video>
-              <figcaption>{item.label}<span>Muted</span></figcaption>
+              <figcaption>{item.label}</figcaption>
             </figure>
           ))}
         </div>

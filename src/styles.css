@@ -425,7 +425,6 @@ figure { margin: 0; }
 .recording-panel { min-width: 0; padding: var(--s3); border: 1px solid var(--line); background: var(--paper-chart); }
 .recording-panel video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 2px; background: #171916; object-fit: contain; }
 .recording-panel figcaption { display: flex; justify-content: space-between; gap: var(--s4); padding-top: var(--s3); color: var(--ink); font-size: 9px; text-transform: uppercase; }
-.recording-panel figcaption span { color: var(--muted); }
 
 .paper {
   display: grid;
