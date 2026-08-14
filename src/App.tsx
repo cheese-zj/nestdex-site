@@ -4,13 +4,16 @@ import InteractiveEffort from './InteractiveEffort'
 import VideoLibrary from './VideoLibrary'
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
+const paperUrl = 'https://arxiv.org/abs/2608.13362'
 
-const citation = `@article{zhao2026nestdex,
-  title   = {NestDex: Nested Policy Learning with Copilot Assisted
-             Teleoperation for Dexterous Manipulation},
-  author  = {Zhao, James and Tang, Jinhe and Ba, Mingyuan and Zhi, Weiming},
-  year    = {2026},
-  note    = {Preprint. Project website: https://aus.bot/research/nestdex}
+const citation = `@misc{zhao2026nestdexnestedpolicylearning,
+  title         = {NestDex: Nested Policy Learning with Copilot Assisted Teleoperation for Dexterous Manipulation},
+  author        = {James Zhao and Jinhe Tang and Mingyuan Ba and Weiming Zhi},
+  year          = {2026},
+  eprint        = {2608.13362},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2608.13362}
 }`
 
 const paperAbstract = `Dexterous manipulation promises substantially richer robot interaction with the physical world, but learning these behaviours remains constrained by the difficulty of collecting consistent, complete-task demonstrations. Unlike parallel-jaw manipulation, dexterous tasks require the operator to coordinate arm motion with precise, contact-rich finger behaviour throughout the task. We introduce NestDex, a nested policy-learning framework that reduces this burden by using learned hand skills to assist demonstration collection. The operator controls the arm and regulates the active hand skill through a single-DoF clutch, rather than directly specifying the full finger trajectory. The inner hand policy adapts its motion from the latest proprioceptive history, while a vision-language selector activates the appropriate skill for each task stage. The resulting demonstrations train a separate outer visuomotor policy that controls both the arm and hand without the inner policies at deployment. A hand-action variational autoencoder provides compact hand-action targets while retaining arm commands in joint space. Across real-world dexterous manipulation experiments, NestDex improves demonstration reliability and efficiency, and the resulting empirical evaluations support effective autonomous policy learning.`
@@ -57,7 +60,7 @@ function App() {
         </div>
 
         <div className="hero-actions" aria-label="Project links">
-          <a className="primary-action" href={asset('paper.pdf')} target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>
+          <a className="primary-action" href={paperUrl} target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>
           <a href="#videos">Videos <span aria-hidden="true">↓</span></a>
           <a href="#citation">BibTeX <span aria-hidden="true">↓</span></a>
         </div>
@@ -138,14 +141,14 @@ function App() {
 
       <section className="paper page-shell" id="paper" aria-labelledby="paper-title">
         <div className="section-intro">
-          <p className="eyebrow">Preprint · 2026</p>
+          <p className="eyebrow">arXiv:2608.13362 · 2026</p>
           <h2 id="paper-title">Paper and citation</h2>
         </div>
         <div className="paper-grid">
           <div>
             <p className="paper-abstract">Read the full paper for the nested-policy formulation, teleoperation interface, six-task evaluation, action representation study and online-execution ablations.</p>
             <div className="paper-links">
-              <a className="text-link" href={asset('paper.pdf')} target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+              <a className="text-link" href={paperUrl} target="_blank" rel="noreferrer">Read on arXiv <span aria-hidden="true">↗</span></a>
               <a className="text-link" href="https://aus.bot/research/" target="_blank" rel="noreferrer">PAIR Lab research <span aria-hidden="true">↗</span></a>
             </div>
           </div>
@@ -158,7 +161,7 @@ function App() {
 
       <footer className="site-footer page-shell">
         <p><strong>NestDex</strong><br />PAIR Lab · The University of Sydney</p>
-        <div><a href={asset('paper.pdf')}>Paper</a><a href="https://aus.bot/research/">PAIR research</a><a href="mailto:weiming.zhi@sydney.edu.au">Contact</a></div>
+        <div><a href={paperUrl} target="_blank" rel="noreferrer">Paper</a><a href="https://aus.bot/research/">PAIR research</a><a href="mailto:weiming.zhi@sydney.edu.au">Contact</a></div>
       </footer>
     </main>
   )
