@@ -184,8 +184,7 @@ figure { margin: 0; }
 .hero-reel-mode.is-assisted strong { background: #efc47f; }
 .hero-reel-mode span { color: rgba(255, 255, 255, .58); }
 .hero-reel-label > span { display: block; margin-top: 8px; color: rgba(255, 255, 255, .68); font: 500 8px/1.2 'IBM Plex Mono', monospace; letter-spacing: .04em; text-transform: uppercase; }
-.hero-reel-label p { display: flex; justify-content: space-between; gap: var(--s5); align-items: baseline; margin: 10px 0 0; font-size: 15px; line-height: 1; }
-.hero-reel-label p strong { color: #a7d3c5; font: 600 13px/1 'IBM Plex Mono', monospace; }
+.hero-reel-label p { margin: 10px 0 0; font-size: 15px; line-height: 1; }
 @keyframes reel-label-in { from { opacity: 0; transform: translateY(-4px); } }
 .hero-media figcaption {
   display: flex;
